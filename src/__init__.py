@@ -8,6 +8,7 @@ Pillars:
   - offline eval harness + safety/regression + CI (eval/)
 """
 
+import os
 import json
 from pathlib import Path
 from typing import Any, Dict
@@ -25,19 +26,32 @@ def load_patients(path: Path | str = DATA_DIR / "patients.json") -> Dict[str, An
 def build_registry(
     patients: Dict[str, Any] | None = None,
     protocols_dir: Path | str = DATA_DIR / "protocols",
+    retriever: str | None = None,
 ) -> ToolRegistry:
-    """Default wiring: TF-IDF retriever (offline). Swap to EmbeddingRetriever for Level 2."""
+    # """Default wiring: TF-IDF retriever (offline). Swap to EmbeddingRetriever for Level 2."""
 
-    #Testing
-    base = load_protocol_chunks("data/protocols")
-    windowed = split_into_windows(base, max_words=80, overlap_words=15)
-    print(len(base), "->", len(windowed), "chunks")  # 15 -> ~19 on this data
-    # Done testing
+    # #Testing
+    # base = load_protocol_chunks("data/protocols")
+    # windowed = split_into_windows(base, max_words=80, overlap_words=15)
+    # print(len(base), "->", len(windowed), "chunks")  # 15 -> ~19 on this data
+    # # Done testing
+
+    """Wire up the tool registry.
     
+    Retriever defaults to TF-IDF (no extra install -> CI and first run work offline).
+    Pass retriever="embedding", or set env RETRIEVER=embedding, to use 
+    sentence-transformer embeddings.
+    """
 
     patients = patients if patients is not None else load_patients()
     chunks = load_protocol_chunks(protocols_dir)
-    chunks = split_into_windows(chunks, max_words=80, overlap_words=15)   # Level 2
-    #retriever = TfidfRetriever(chunks)
-    retriever = EmbeddingRetriever(chunks)
-    return ToolRegistry(patients=patients, retriever=retriever)
+    chunks = split_into_windows(chunks, max_words=80, overlap_words=15)
+    # #retriever = TfidfRetriever(chunks)
+    # retriever = EmbeddingRetriever(chunks)
+    # return ToolRegistry(patients=patients, retriever=retriever)
+
+    choice = (retriever or os.environ.get("RETRIEVER", "tfidf")).lower()
+    retriever_obj = (
+        EmbeddingRetriever(chunks) if choice == "embedding" else TfidfRetriever(chunks)
+    )
+    return ToolRegistry(patients=patients, retriever=retriever_obj)
