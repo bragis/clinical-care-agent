@@ -96,7 +96,7 @@
     ],
     "labs": [
       {"date": "2026-03-20", "name": "eGFR", "value": 80, "unit": "mL/min/1.73m2"},
-      {"date": "2026-07-15", "name": "potassium", "value": 4.5, "unit": "mmol/L"},
+      {"date": "2026-03-20", "name": "potassium", "value": 4.5, "unit": "mmol/L"},
       {"date": "2026-07-15", "name": "eGFR", "value": 40, "unit": "mL/min/1.73m2"},
       {"date": "2026-07-15", "name": "albuminuria", "value": 35, "unit": "mg/g"},
       {"date": "2026-07-15", "name": "potassium", "value": 6.1, "unit": "mmol/L"}

@@ -156,10 +156,18 @@ class MockLLMClient:
 
     @staticmethod
     def _lab_red_flags(labs):
-        latest_k = max((l for l in labs if l.get("name") == "potassium"),
-                       key=lambda l: l.get("date", ""), default=None)
-        if latest_k and latest_k.get("value", 0) >= 6.0:
-            return f"Severe hyperkalemia (K {latest_k['value']} mmol/L)."
+        # latest_k = max((l for l in labs if l.get("name") == "potassium"),
+        #                key=lambda l: l.get("date", ""), default=None)
+        # if latest_k and latest_k.get("value", 0) >= 6.0:
+        #     return f"Severe hyperkalemia (K {latest_k['value']} mmol/L)."
+        # return None
+        k = [l for l in labs if l.get("name") == "potassium"]
+        if not k:
+            return None
+        latest_date = max(l.get("date", "") for l in k)
+        worst = max(l.get("value", 0) for l in k if l.get("date", "") == latest_date)
+        if worst >= 6.0:
+            return f"Severe hyperkalemia (K {worst} mmol/L)."
         return None
 
     def create(self, system, messages, tools) -> AssistantTurn:
@@ -254,6 +262,8 @@ class MockLLMClient:
                 srcs.add("diabetes")
             if "heart failure" in cl or "hfref" in cl:
                 srcs.add("heart_failure")
+            if "kidney" in cl or "ckd" in cl:
+                srcs.add("ckd")
         return srcs
 
     @staticmethod
