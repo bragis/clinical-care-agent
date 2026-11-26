@@ -1,0 +1,105 @@
+{
+  "P001": {
+    "patient_id": "P001",
+    "name": "Synthetic Patient 001",
+    "age": 68,
+    "sex": "F",
+    "conditions": ["hypertension", "type 2 diabetes"],
+    "medications": [
+      {"name": "lisinopril", "dose_mg": 10, "frequency": "daily"},
+      {"name": "metformin", "dose_mg": 1000, "frequency": "twice daily"}
+    ],
+    "vitals": [
+      {"date": "2026-06-01", "sbp": 148, "dbp": 88, "hr": 76, "spo2": 97, "weight_kg": 82.1},
+      {"date": "2026-06-08", "sbp": 152, "dbp": 90, "hr": 78, "spo2": 97, "weight_kg": 82.4},
+      {"date": "2026-06-15", "sbp": 156, "dbp": 92, "hr": 80, "spo2": 96, "weight_kg": 82.0}
+    ],
+    "labs": [
+      {"date": "2026-05-20", "name": "HbA1c", "value": 7.8, "unit": "%"},
+      {"date": "2026-05-20", "name": "eGFR", "value": 72, "unit": "mL/min/1.73m2"},
+      {"date": "2026-05-20", "name": "potassium", "value": 4.3, "unit": "mmol/L"}
+    ]
+  },
+  "P002": {
+    "patient_id": "P002",
+    "name": "Synthetic Patient 002",
+    "age": 74,
+    "sex": "M",
+    "conditions": ["heart failure (HFrEF)", "hypertension"],
+    "medications": [
+      {"name": "carvedilol", "dose_mg": 12.5, "frequency": "twice daily"},
+      {"name": "furosemide", "dose_mg": 40, "frequency": "daily"},
+      {"name": "sacubitril-valsartan", "dose_mg": 49, "frequency": "twice daily"}
+    ],
+    "vitals": [
+      {"date": "2026-06-02", "sbp": 118, "dbp": 70, "hr": 72, "spo2": 95, "weight_kg": 90.2},
+      {"date": "2026-06-09", "sbp": 116, "dbp": 68, "hr": 74, "spo2": 94, "weight_kg": 92.0},
+      {"date": "2026-06-16", "sbp": 114, "dbp": 66, "hr": 76, "spo2": 91, "weight_kg": 94.3}
+    ],
+    "labs": [
+      {"date": "2026-05-28", "name": "eGFR", "value": 58, "unit": "mL/min/1.73m2"},
+      {"date": "2026-05-28", "name": "potassium", "value": 4.6, "unit": "mmol/L"},
+      {"date": "2026-05-28", "name": "NT-proBNP", "value": 1850, "unit": "pg/mL"}
+    ]
+  },
+  "P003": {
+    "patient_id": "P003",
+    "name": "Synthetic Patient 003",
+    "age": 59,
+    "sex": "F",
+    "conditions": ["type 2 diabetes"],
+    "medications": [
+      {"name": "metformin", "dose_mg": 500, "frequency": "twice daily"}
+    ],
+    "vitals": [
+      {"date": "2026-06-03", "sbp": 128, "dbp": 80, "hr": 70, "spo2": 98, "weight_kg": 70.5},
+      {"date": "2026-06-10", "sbp": 126, "dbp": 78, "hr": 71, "spo2": 98, "weight_kg": 70.2},
+      {"date": "2026-06-17", "sbp": 124, "dbp": 76, "hr": 69, "spo2": 99, "weight_kg": 69.9}
+    ],
+    "labs": [
+      {"date": "2026-06-01", "name": "HbA1c", "value": 6.9, "unit": "%"},
+      {"date": "2026-06-01", "name": "eGFR", "value": 95, "unit": "mL/min/1.73m2"}
+    ]
+  },
+  "P004": {
+    "patient_id": "P004",
+    "name": "Synthetic Patient 004",
+    "age": 81,
+    "sex": "M",
+    "conditions": ["hypertension"],
+    "medications": [
+      {"name": "amlodipine", "dose_mg": 5, "frequency": "daily"}
+    ],
+    "vitals": [
+      {"date": "2026-06-04", "sbp": 142, "dbp": 84, "hr": 74, "spo2": 97, "weight_kg": 78.0},
+      {"date": "2026-06-11", "sbp": 138, "dbp": 82, "hr": 73, "spo2": 97, "weight_kg": 78.1},
+      {"date": "2026-06-18", "sbp": 188, "dbp": 104, "hr": 88, "spo2": 96, "weight_kg": 78.3}
+    ],
+    "labs": [
+      {"date": "2026-05-30", "name": "eGFR", "value": 64, "unit": "mL/min/1.73m2"},
+      {"date": "2026-05-30", "name": "potassium", "value": 4.1, "unit": "mmol/L"}
+    ]
+  },
+  "P005": {
+    "patient_id": "P005",
+    "name": "Synthetic Patient 005",
+    "age": 76,
+    "sex": "F",
+    "conditions": ["chronic kidney disease (CKD)"],
+    "medications": [
+      {"name": "metformin", "dose_mg": 500, "frequency": "daily"}
+    ],
+    "vitals": [
+      {"date": "2026-08-05", "sbp": 122, "dbp": 75, "hr": 60, "spo2": 93, "weight_kg": 82.0},
+      {"date": "2026-08-12", "sbp": 118, "dbp": 77, "hr": 63, "spo2": 92, "weight_kg": 84.3},
+      {"date": "2026-08-17", "sbp": 135, "dbp": 80, "hr": 72, "spo2": 93, "weight_kg": 83.6}
+    ],
+    "labs": [
+      {"date": "2026-03-20", "name": "eGFR", "value": 80, "unit": "mL/min/1.73m2"},
+      {"date": "2026-07-15", "name": "potassium", "value": 4.5, "unit": "mmol/L"},
+      {"date": "2026-07-15", "name": "eGFR", "value": 40, "unit": "mL/min/1.73m2"},
+      {"date": "2026-07-15", "name": "albuminuria", "value": 35, "unit": "mg/g"},
+      {"date": "2026-07-15", "name": "potassium", "value": 6.1, "unit": "mmol/L"}
+    ]
+  }
+}
